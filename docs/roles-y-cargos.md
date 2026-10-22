@@ -37,7 +37,7 @@ tags:
                     └──────┬───────┬───────┘
                   ┌────────┘       └────────┐
         ┌─────────┴─────────┐     ┌─────────┴─────────┐
-        │ Reylin Santana    │     │ Neury             │
+        │ Reylin Santana    │     │ Neury Montero     │
         │ CEO & CISO        │     │ CTO & Arq. de Red │
         │ Seguridad / SOC   │     │ LAN/WAN / DMVPN   │
         └─────────┬─────────┘     └─────────┬─────────┘
@@ -69,7 +69,7 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 | Rol          | Nombre         | Cargo Corporativo           | Responsabilidad                                                                                                        |
 | ------------ | -------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **Líder**    | Reylin Santana | **CEO & CISO**              | Visión estratégica, diseño de arquitecturas de seguridad, implementación de protocolos defensivos y monitoreo del SOC. |
-| **Co-Líder** | Neury          | **CTO & Arquitecto de Red** | Diseño de alto nivel de la infraestructura de red, estructuración de topologías, enrutamiento y conectividad WAN.      |
+| **Co-Líder** | Neury Montero          | **CTO & Arquitecto de Red** | Diseño de alto nivel de la infraestructura de red, estructuración de topologías, enrutamiento y conectividad WAN.      |
 
 ---
 
@@ -85,7 +85,7 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 
 | Área | Nombre | Cargo | Responsabilidades |
 |---|---|---|---|
-| **Enrutamiento** | Neury | **CTO & Arquitecto de Red** *(rol dual)* | Protocolos de enrutamiento (OSPF multi-área), traducción de direcciones (NAT) y redundancia de primer salto (HSRP). |
+| **Enrutamiento** | Neury Montero | **CTO & Arquitecto de Red** *(rol dual)* | Protocolos de enrutamiento (OSPF multi-área), traducción de direcciones (NAT) y redundancia de primer salto (HSRP). |
 | **Servidores** | Starlin | **Lead Full-Stack Developer** *(rol dual)* | Configuración, despliegue y mantenimiento de servidores empresariales (Web, Correo, FTP, DNS, RADIUS) en la topología. |
 
 ### C. Equipo de Seguridad — Protección y Protocolos
@@ -117,7 +117,7 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 
 | Entregable del proyecto                                 | Responsable(s)       | Estado |
 | ------------------------------------------------------- | -------------------- | ------ |
-| Topología y diseño LAN/WAN                              | Neury                | ✅      |
+| Topología y diseño LAN/WAN                              | Neury Montero        | ✅      |
 | Scripts de Santo Domingo (R-SD, SWM-1/2, SW-10/11/12)   | Reylin + Neury       | ✅      |
 | Scripts de La Romana (R-ROMANA, SW-3, SW-9)             | Franchesca + Starlin | ✅      |
 | Scripts de Santiago (R-SANTIAGO, SWM-1/Sw-2, servicios) | Starlin + Randy      | ✅      |
