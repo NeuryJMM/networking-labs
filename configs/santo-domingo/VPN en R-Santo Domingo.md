@@ -15,7 +15,7 @@ tunnel mode gre multipoint
 
 ip nhrp network-id 2026
 ip nhrp map multicast dynamic
-ip nhrp authentication <NHRP-KEY>
+ip nhrp authentication Empresa-1
 
 no shutdown
 

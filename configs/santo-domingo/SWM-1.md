@@ -10,8 +10,8 @@ service timestamps debug datetime msec
 service timestamps log datetime msec
 service password-encryption
 
-enable secret <PASSWORD>
-username admin privilege 15 secret <PASSWORD>
+enable secret AEGIS-2026
+username admin privilege 15 secret AEGIS-2026
 
 no ip domain-lookup
 ip domain-name aegis.com.do

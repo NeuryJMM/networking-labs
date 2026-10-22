@@ -8,9 +8,9 @@ service password-encryption
 
 ! --- Credenciales y SSH ---
 
-enable secret <PASSWORD>
+enable secret AEGIS-2026
 
-username admin privilege 15 secret <PASSWORD>
+username admin privilege 15 secret AEGIS-2026
 
 no ip domain-lookup
 
@@ -111,7 +111,7 @@ crypto isakmp policy 10
  
  lifetime 3600
  
-crypto isakmp key <PSK-VPN> address 0.0.0.0 0.0.0.0
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
 
 
 crypto ipsec transform-set AEGIS-TS esp-aes 256 esp-sha256-hmac
@@ -145,7 +145,7 @@ interface Tunnel1
  
  ip nhrp nhs 10.1.100.1
  
- ip nhrp authentication <NHRP-KEY>
+ ip nhrp authentication AEGIS
  
  ip ospf network point-to-multipoint
  

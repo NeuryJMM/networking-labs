@@ -18,9 +18,9 @@ service password-encryption
 ## Credenciales y SSH
 
 ```cisco
-enable secret <PASSWORD>
+enable secret AEGIS-2026
 
-username admin privilege 15 secret <PASSWORD>
+username admin privilege 15 secret AEGIS-2026
 
 no ip domain-lookup
 ip domain-name aegis.com.do
@@ -53,7 +53,7 @@ authentication pre-share
 group 14
 lifetime 3600
 
-crypto isakmp key <PSK-VPN> address 0.0.0.0 0.0.0.0
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
 ```
 
 ### Transform Set
@@ -89,7 +89,7 @@ ip nhrp network-id 2026
 ip nhrp map 10.1.100.1 1.0.0.2
 ip nhrp map multicast 1.0.0.2
 ip nhrp nhs 10.1.100.1
-ip nhrp authentication <NHRP-KEY>
+ip nhrp authentication AEGIS
 
 ip ospf network point-to-multipoint
 ip ospf 1 area 0

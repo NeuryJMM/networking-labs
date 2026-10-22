@@ -71,8 +71,8 @@ tags:
 | **OSPF** | Área 0 (Backbone/Túnel) + Área 10 (Santo Domingo) |
 | **DHCP** | 7 pools por VLAN (10-70) + exclusiones de gateways HSRP + `ip helper-address` desde SWM-1/SWM-2 |
 | **Seguridad** | SSHv2 (RSA 2048), NAT Overload (PAT), ACLs `VPN-TRAFFIC` y `NAT-INTERNAS`, banner MOTD |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
-| **IPsec Key** | `<PSK-VPN>` (pre-shared key para DMVPN) |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
+| **IPsec Key** | `AEGIS-2026-VPN` (pre-shared key para DMVPN) |
 | **NHRP Auth** | `AEGIS` |
 | **Justificación** | Alta capacidad para múltiples protocolos. Hub central que requiere alta disponibilidad (HA), redundancia de rutas y terminación de túneles seguros para proteger los datos de los clientes. |
 
@@ -90,7 +90,7 @@ tags:
 | **Uplinks** | `e0/0` → R-SD (10.255.255.2/30) \| `e1/0`–`e1/2` → SW-10 / SW-11 / SW-12 |
 | **SVIs (gateways)** | VLAN 10 → .194 \| VLAN 20 → .50 \| VLAN 30 → .226 \| VLAN 40 → .2 \| VLAN 50 → .2 \| VLAN 60 → .2 \| VLAN 70 → .2 |
 | **OSPF** | Área 10 (router-id 2.2.2.2) |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 ### 3. Switch SWM-2 — Distribución L3 (Redundante)
 
@@ -106,7 +106,7 @@ tags:
 | **Uplinks** | `e0/0` → R-SD (10.255.255.6/30) \| `e1/0`–`e1/2` → SW-10 / SW-11 / SW-12 |
 | **SVIs (gateways)** | VLAN 10 → .195 \| VLAN 20 → .51 \| VLAN 30 → .227 \| VLAN 40 → .3 \| VLAN 50 → .3 \| VLAN 60 → .3 \| VLAN 70 → .3 |
 | **OSPF** | Área 10 (router-id 3.3.3.3) |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 ### 4. Switches de Acceso — Capa L2 (SW-10, SW-11, SW-12)
 
@@ -116,7 +116,7 @@ tags:
 | **Cantidad** | 3 |
 | **Uplinks** | Doble trunk (`e0/0`–`e0/1`) hacia SWM-1 y SWM-2 (802.1Q, native VLAN 99) |
 | **Seguridad** | Port Security (MAC sticky, máx. 2, `restrict`), BPDU Guard, PortFast |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 **Distribución de VLANs por switch de acceso:**
 
@@ -145,8 +145,8 @@ tags:
 | **OSPF**          | Área 20 (Santiago) + Área 0 (Túnel DMVPN)                                                                                   |
 | **DHCP**          | Relay hacia servidor Linux en VLAN 199                                                                                      |
 | **Seguridad**     | SSHv2, NAT Overload, ACLs `VPN-TRAFFIC` / `NAT-INTERNAS`, banner MOTD                                                       |
-| **Credenciales**  | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>`                                                |
-| **IPsec Key**     | `<PSK-VPN>`                                                                                                            |
+| **Credenciales**  | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026`                                                |
+| **IPsec Key**     | `AEGIS-2026-VPN`                                                                                                            |
 | **NHRP Auth**     | `AEGIS`                                                                                                                     |
 | **Estado**        | Implementado                                                      |
 |                   |                                                                                                                             |
@@ -161,7 +161,7 @@ tags:
 | **EtherChannel** | Po1 (LACP `mode active`) hacia SW-2 |
 | **Uplinks** | `e0/0` → R-SANTIAGO (trunk VLAN 99) |
 | **STP** | Root Bridge (prioridad 24576) — Rapid PVST |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 | **Estado** |                                                                                    |
 
 ### 7. Switch SW-2 (Santiago) — Acceso L3 / Core Local
@@ -174,7 +174,7 @@ tags:
 | **EtherChannel** | Po1 (LACP `mode active`) hacia SW-1 |
 | **STP** | Root Bridge Secundario (prioridad 28672) — Rapid PVST |
 | **Puerto Servidor** | `e0/2` → Servidor Linux (VLAN 199, Port Security máx. 5) |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 ### 8. Servidores Linux (Pendientes)
 
@@ -202,8 +202,8 @@ tags:
 | **OSPF** | Área 30 (La Romana) + Área 0 (Túnel DMVPN) |
 | **DHCP** | 3 pools por VLAN (210, 220, 230) |
 | **Seguridad** | SSHv2, NAT Overload, ACLs `VPN-TRAFFIC` / `NAT-INTERNAS`, banner MOTD |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
-| **IPsec Key** | `<PSK-VPN>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
+| **IPsec Key** | `AEGIS-2026-VPN` |
 | **NHRP Auth** | `AEGIS` |
 
 ### 10. Switch SW-3 (La Romana) — Distribución
@@ -216,7 +216,7 @@ tags:
 | **EtherChannel** | Po1 (LACP `mode active`) hacia SW-9 |
 | **Uplinks** | `e0/0` → R-ROMANA (trunk) |
 | **STP** | Root Bridge (prioridad 24576) |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 ### 11. Switch SW-9 (La Romana) — Acceso L2
 
@@ -226,7 +226,7 @@ tags:
 | **Función** | Acceso para departamentos de consultoría. |
 | **VLANs** | 210 (Dir. Regional), 220 (Consultoría TI), 230 (Ing. Infraestructura) |
 | **Seguridad** | Port Security (MAC sticky, máx. 2, `restrict`), BPDU Guard, PortFast |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 ---
 
@@ -248,8 +248,8 @@ tags:
 | **OSPF** | Área 40 (Puerto Plata) + Área 0 (Túnel DMVPN) |
 | **DHCP** | 5 pools por VLAN (310-350) |
 | **Seguridad** | SSHv2, NAT Overload, ACLs `VPN-TRAFFIC` / `NAT-INTERNAS`, banner MOTD |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
-| **IPsec Key** | `<PSK-VPN>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
+| **IPsec Key** | `AEGIS-2026-VPN` |
 | **NHRP Auth** | `AEGIS` |
 | **Estado** |            |
 
@@ -262,7 +262,7 @@ tags:
 | **VLANs** | 310 (DFIR), 320 (Malware), 330 (Threat Intel), 340 (Red Team), 350 (SOC) |
 | **Trunks** | `e0/0` → R-PUERTO-PLATA \| `e0/1` → sw-31 \| `e0/2` → sw-30 |
 | **STP** | Root Bridge (prioridad 24576) — Rapid PVST |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 | **Estado** |                                                 |
 
 ### 14. Switch sw-30 (Puerto Plata) — Acceso L2 (DFIR, Malware)
@@ -274,7 +274,7 @@ tags:
 | **VLANs** | 310 (DFIR), 320 (Malware) |
 | **Uplink** | `e0/0` → SW-5 (trunk) |
 | **Puertos Acceso** | `e0/1` → PC DFIR (VLAN 310) \| `e0/2` → PC Malware (VLAN 320) |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 ### 15. Switch sw-31 (Puerto Plata) — Acceso L2 (TH, Red Team, SOC)
 
@@ -285,7 +285,7 @@ tags:
 | **VLANs** | 330 (Threat Intel), 340 (Red Team), 350 (SOC) |
 | **Uplink** | `e0/0` → SW-5 (trunk) |
 | **Puertos Acceso** | `e0/1` → PC Threat Intel (VLAN 330) \| `e0/2` → PC Red Team (VLAN 340) \| `e0/3` → PC SOC (VLAN 350) |
-| **Credenciales** | `enable secret <PASSWORD>` / `username admin privilege 15 secret <PASSWORD>` |
+| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
 
 ---
 
@@ -313,6 +313,13 @@ tags:
 
 
 
+### Credenciales y claves
+
+| Dispositivo | Credencial Anterior | Credencial Actual (Corregida) |
+|---|---|---|
+| R-SD | `enable secret cisco123` | `enable secret AEGIS-2026` ✅ |
+| NHRP Auth (todos) | `AEGIS` (R-SD) / `Empresa-1` (VPN docs) | `AEGIS` unificado ✅ |
+| IPsec PSK (todos) | Variaba por documento | `AEGIS-2026-VPN` unificado ✅ |
 
 ### Configuración
 

@@ -97,8 +97,8 @@ router ospf 1
  network 10.0.17.32 0.0.0.15 area 30
  network 10.0.19.0 0.0.0.3 area 30
 
-enable secret <PASSWORD>
-username admin privilege 15 secret <PASSWORD>
+enable secret AEGIS-2026
+username admin privilege 15 secret AEGIS-2026
 line con 0
  logging synchronous
  exec-timeout 5 0

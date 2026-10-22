@@ -10,7 +10,7 @@ service timestamps debug datetime msec
 service timestamps log datetime msec
 service password-encryption
 
-username admin privilege 15 secret <PASSWORD>
+username admin privilege 15 secret AEGIS-2026
 no ip domain-lookup
 ip domain-name aegis.com.do
 ip ssh version 2
@@ -62,7 +62,7 @@ interface Port-channel1
 
 banner motd #
 **************************************************************************
-<PASSWORD>
+AEGIS-2026
 ADVERTENCIA: ACCESO RESTRINGIDO.
 Toda actividad en este dispositivo esta siendo monitorizada.
 *************************************************************************

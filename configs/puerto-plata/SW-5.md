@@ -69,8 +69,8 @@ interface Ethernet0/2
  no shutdown
  
 
-enable secret <PASSWORD>
-username admin privilege 15 secret <PASSWORD>
+enable secret AEGIS-2026
+username admin privilege 15 secret AEGIS-2026
 line con 0
  logging synchronous
  exec-timeout 5 0

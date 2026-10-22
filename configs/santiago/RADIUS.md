@@ -8,7 +8,7 @@ sudo nano /etc/freeradius/3.0/clients.conf
 Al final del archivo, agregamos:
 client santiago-lan {
     ipaddr     = 10.0.0.0/8
-    secret     = <PASSWORD>
+    secret     = AEGIS-2026
 }
 
 Crear los usuarios:
@@ -34,7 +34,7 @@ Deja correr ese comando y espera a que en la última línea diga:
 Ready to process requests
 
 
-radtest neury Neury2026* 10.0.10.2 0 <PASSWORD>
+radtest neury Neury2026* 10.0.10.2 0 AEGIS-2026
 
 Debe responder algo como:
 Received Access-Accept Id ... from 10.0.10.2:1812 to 10.0.10.2:...
